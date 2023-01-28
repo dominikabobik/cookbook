@@ -6,3 +6,16 @@
   flex-direction: column;
   gap: 2rem;
 }
+
+.button {
+  width: 80%;
+  outline: none;
+  border: 1px solid rgba(var(--callout-border-rgb), 0.3);
+  border-radius: var(--border-radius);
+  transition: all 250ms ease-in-out;
+  padding: 1rem;
+}
+
+.button:hover {
+  transform: scale(1.05);
+}

@@ -21,6 +21,10 @@ export const RecipeList: RecipeData[] = [
   {
     title: 'sernik',
     filters: ['deser']
+  },
+  {
+    title: 'skubaniec',
+    filters: ['deser']
   }
 ]
 

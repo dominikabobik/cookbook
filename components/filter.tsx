@@ -62,14 +62,14 @@ export const Filter = (): JSX.Element => {
 
   return (
     <div className={styles.container}>
-      <Checkbox label="Deser" value={cntx.deser} onChange={handleDeser} />
       <Checkbox label="Danie mięsne" value={cntx.mieso} onChange={handleMieso} />
       <Checkbox label="Danie rybne" value={cntx.ryba} onChange={handleRyba} />
       <Checkbox label="Śniadanie" value={cntx.sniadanie} onChange={handleSniadanie} />
       <Checkbox label="Obiad" value={cntx.obiad} onChange={handleObiad} />
       <Checkbox label="Kolacja" value={cntx.kolacja} onChange={handleKolacja} />
+      <Checkbox label="Deser" value={cntx.deser} onChange={handleDeser} />
       <Checkbox label="Wielkanoc" value={cntx.wielkanoc} onChange={handleWielkanoc} />
       <Checkbox label="Święta" value={cntx.swieta} onChange={handleSwieta} />
-      <button onClick={handleButton}>Clear All the Filters</button>
+      <button className={styles.button} onClick={handleButton}>Clear All the Filters</button>
     </div>)
 }
