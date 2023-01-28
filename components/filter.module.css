@@ -19,3 +19,7 @@
 .button:hover {
   transform: scale(1.05);
 }
+
+.title {
+  font-size: 2rem;
+}
