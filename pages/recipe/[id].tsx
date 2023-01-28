@@ -1,0 +1,43 @@
+import { GetStaticPropsContext, NextPage } from "next"
+import { RecipeList } from ".."
+import { FC } from "react"
+import styles from '/styles/recipe.module.css'
+import ReactMarkdown from 'react-markdown'
+import fs from 'fs'
+import path from 'path'
+
+type RecipePageProps = {
+  title: string,
+  file: string
+}
+
+const RecipePage: FC<RecipePageProps> = (props: RecipePageProps) => {
+  return (
+    <div className={styles.container}>
+      <ReactMarkdown>{props.file}</ReactMarkdown>
+    </div>)
+}
+export default RecipePage
+
+export async function getStaticPaths() {
+  // Get the paths we want to pre-render based on posts
+  const paths = RecipeList.map((e) => ({
+    params: { id: e.title },
+  }))
+
+  return { paths, fallback: true }
+}
+
+export const getStaticProps = async (context: GetStaticPropsContext) => {
+  const fullPath = path.join(process.cwd(), 'public', 'markdown', `${context.params?.id}.md`);
+  const fileContent = fs.readFileSync(fullPath, "utf-8")
+
+  return {
+    props: {
+      title: context.params?.id,
+      file: fileContent
+    }
+  }
+}
+
+

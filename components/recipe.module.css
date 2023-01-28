@@ -1,0 +1,9 @@
+.container {
+  padding: 2rem;
+  border-bottom: 1px solid rgba(var(--callout-border-rgb), 0.3);
+  transition: all 250ms ease-in-out;
+}
+
+.container:hover {
+  transform: scale(1.05);
+}
