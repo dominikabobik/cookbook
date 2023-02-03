@@ -15,6 +15,7 @@
   display: flex;
   flex-direction: column;
   padding: 1rem;
+  overflow: scroll;
 }
 
 @media screen and (max-width: 600px) {
@@ -27,21 +28,4 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  .vercelLogo {
-    filter: invert(1);
-  }
-
-  .logo,
-  .thirteen img {
-    filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70);
-  }
-}
-
-@keyframes rotate {
-  from {
-    transform: rotate(360deg);
-  }
-  to {
-    transform: rotate(0deg);
-  }
 }

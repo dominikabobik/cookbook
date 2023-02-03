@@ -25,7 +25,23 @@ export const RecipeList: RecipeData[] = [
   {
     title: 'skubaniec',
     filters: ['deser']
-  }
+  },
+  {
+    title: 'krupnik',
+    filters: ['obiad', 'zupa']
+  },
+  {
+    title: 'ogorkowa',
+    filters: ['obiad', 'zupa']
+  },
+  {
+    title: 'pomidorowa',
+    filters: ['obiad', 'zupa']
+  },
+  {
+    title: 'rosol',
+    filters: ['obiad', 'zupa']
+  },
 ]
 
 export type globalContextType = {
