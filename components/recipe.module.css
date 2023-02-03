@@ -7,3 +7,9 @@
 .container:hover {
   transform: scale(1.05);
 }
+
+/* @media screen and (max-width: 600px) {
+  .container {
+    padding: 0.5rem;
+  }
+} */
