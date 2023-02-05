@@ -4,6 +4,13 @@
   margin-top: 1rem;
   margin-bottom: 1rem;
   overflow: scroll;
+  gap: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.container img {
+  width: 50%;
 }
 
 @media screen and (max-width: 600px) {
