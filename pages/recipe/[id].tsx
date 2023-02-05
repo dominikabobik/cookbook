@@ -22,7 +22,7 @@ export default RecipePage
 export async function getStaticPaths() {
   // Get the paths we want to pre-render based on posts
   const paths = RecipeList.map((e) => ({
-    params: { id: e.title },
+    params: { id: e.link },
   }))
 
   return { paths, fallback: true }
