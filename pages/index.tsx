@@ -7,41 +7,60 @@ import { Dispatch, SetStateAction, createContext, useContext, useState } from 'r
 
 interface RecipeData {
   title: string,
+  link: string,
   filters: string[]
 }
 export const RecipeList: RecipeData[] = [
   {
-    title: 'barszcz',
+    title: 'Barszcz',
+    link: 'barszcz',
     filters: ['swieta']
   },
   {
-    title: 'pierogi',
+    title: 'Pierogi',
+    link: 'pierogi',
     filters: ['swieta']
   },
   {
-    title: 'sernik',
+    title: 'Sernik',
+    link: 'sernik',
     filters: ['deser']
   },
   {
-    title: 'skubaniec',
+    title: 'Skubaniec',
+    link: 'skubaniec',
     filters: ['deser']
   },
   {
-    title: 'krupnik',
+    title: 'Krupnik',
+    link: 'krupnik',
     filters: ['obiad', 'zupa']
   },
   {
-    title: 'ogorkowa',
+    title: 'Ogórkowa',
+    link: 'ogorkowa',
     filters: ['obiad', 'zupa']
   },
   {
-    title: 'pomidorowa',
+    title: 'Pomidorowa',
+    link: 'pomidorowa',
     filters: ['obiad', 'zupa']
   },
   {
-    title: 'rosol',
+    title: 'Rosół',
+    link: 'rosol',
     filters: ['obiad', 'zupa']
   },
+  {
+    title: 'Pieczone naleśniki',
+    link: 'pieczone-nalesniki',
+    filters: ['sniadanie']
+  },
+  {
+    title: 'Chleb Bananowy',
+    link: 'chleb-bananowy',
+    filters: ['sniadanie', 'deser']
+  }
 ]
 
 export type globalContextType = {
@@ -98,7 +117,7 @@ export default function Home() {
           {RecipeList.map((e, i) => {
             if (!deser && !mieso && !ryba && !sniadanie && !kolacja && !obiad && !wielkanoc && !swieta)
               return (
-                <Recipe title={e.title} key={i}></Recipe>
+                <Recipe title={e.title} link={e.link} key={i}></Recipe>
               )
             else if (deser && e.filters.includes('deser') ||
               mieso && e.filters.includes('mieso') ||
@@ -110,7 +129,7 @@ export default function Home() {
               swieta && e.filters.includes('swieta')
             ) {
               return (
-                <Recipe title={e.title} key={i}></Recipe>
+                <Recipe title={e.title} link={e.link} key={i}></Recipe>
               )
             }
           })}
