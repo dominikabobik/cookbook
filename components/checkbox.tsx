@@ -7,7 +7,6 @@ type CheckboxProps = {
   onChange: () => void
 }
 
-
 export const Checkbox = ({ label, value, onChange }: CheckboxProps) => {
   return (
     <label className={styles.label}>

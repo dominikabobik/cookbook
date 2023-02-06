@@ -4,64 +4,7 @@ import { Filter } from '@/components/filter'
 import { Recipe } from '@/components/recipe'
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
 import { Dispatch, SetStateAction, createContext, useContext, useState } from 'react'
-
-interface RecipeData {
-  title: string,
-  link: string,
-  filters: string[]
-}
-export const RecipeList: RecipeData[] = [
-  {
-    title: 'Barszcz',
-    link: 'barszcz',
-    filters: ['swieta']
-  },
-  {
-    title: 'Pierogi',
-    link: 'pierogi',
-    filters: ['swieta']
-  },
-  {
-    title: 'Sernik',
-    link: 'sernik',
-    filters: ['deser']
-  },
-  {
-    title: 'Skubaniec',
-    link: 'skubaniec',
-    filters: ['deser']
-  },
-  {
-    title: 'Krupnik',
-    link: 'krupnik',
-    filters: ['obiad', 'zupa']
-  },
-  {
-    title: 'Ogórkowa',
-    link: 'ogorkowa',
-    filters: ['obiad', 'zupa']
-  },
-  {
-    title: 'Pomidorowa',
-    link: 'pomidorowa',
-    filters: ['obiad', 'zupa']
-  },
-  {
-    title: 'Rosół',
-    link: 'rosol',
-    filters: ['obiad', 'zupa']
-  },
-  {
-    title: 'Pieczone naleśniki',
-    link: 'pieczone-nalesniki',
-    filters: ['sniadanie']
-  },
-  {
-    title: 'Chleb Bananowy',
-    link: 'chleb-bananowy',
-    filters: ['sniadanie', 'deser']
-  }
-]
+import { RecipeList } from '@/data/data'
 
 export type globalContextType = {
   deser: boolean,
@@ -114,7 +57,7 @@ export default function Home() {
       <main className={styles.main}>
         <Filter />
         <ul className={styles.recipesContainer}>
-          {RecipeList.map((e, i) => {
+          {RecipeList.sort((a, b) => { return a.title.localeCompare(b.title) }).map((e, i) => {
             if (!deser && !mieso && !ryba && !sniadanie && !kolacja && !obiad && !wielkanoc && !swieta)
               return (
                 <Recipe title={e.title} link={e.link} key={i}></Recipe>
