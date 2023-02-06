@@ -1,10 +1,10 @@
 import { GetStaticPropsContext, NextPage } from "next"
-import { RecipeList } from ".."
 import { FC } from "react"
 import styles from '/styles/recipe.module.css'
 import ReactMarkdown from 'react-markdown'
 import fs from 'fs'
 import path from 'path'
+import { RecipeList } from "@/data/data"
 
 type RecipePageProps = {
   title: string,
