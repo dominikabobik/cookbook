@@ -63,5 +63,10 @@ export const RecipeList: RecipeData[] = [
     title: 'Ogórki Małosolne',
     link: 'ogorki-malosolne',
     filters: []
+  },
+  {
+    title: 'Budyń',
+    link: 'budyn',
+    filters: ['deser']
   }
 ]
