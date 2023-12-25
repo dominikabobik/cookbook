@@ -15,6 +15,7 @@ const RecipePage: FC<RecipePageProps> = (props: RecipePageProps) => {
   return (
     <div className={styles.container}>
       <ReactMarkdown>{props.file}</ReactMarkdown>
+      <img src={`/images/${props.title}.jpg`} width={320} height={320}></img>
     </div>)
 }
 export default RecipePage
