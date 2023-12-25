@@ -66,43 +66,40 @@ export default function Home() {
         </div>
         <ul className={styles.recipesContainer}>
           {RecipeList.sort((a, b) => { return a.title.localeCompare(b.title) }).map((e, i) => {
-            if (!deser && !mieso && !ryba && !sniadanie && !kolacja && !obiad && !wielkanoc && !swieta && !search)
-              return (
-                <Recipe title={e.title} link={e.link} key={i}></Recipe>
-              )
-            else if ((deser && e.filters.includes('deser') ||
-              mieso && e.filters.includes('mieso') ||
-              ryba && e.filters.includes('ryba') ||
-              sniadanie && e.filters.includes('sniadanie') ||
-              kolacja && e.filters.includes('kolacja') ||
-              obiad && e.filters.includes('obiad') ||
-              wielkanoc && e.filters.includes('wielkanoc') ||
-              swieta && e.filters.includes('swieta')) &&
-              !search
-            ) {
-              return (
-                <Recipe title={e.title} link={e.link} key={i}></Recipe>
-              )
-            }
-            else if ((deser && e.filters.includes('deser') ||
-              mieso && e.filters.includes('mieso') ||
-              ryba && e.filters.includes('ryba') ||
-              sniadanie && e.filters.includes('sniadanie') ||
-              kolacja && e.filters.includes('kolacja') ||
-              obiad && e.filters.includes('obiad') ||
-              wielkanoc && e.filters.includes('wielkanoc') ||
-              swieta && e.filters.includes('swieta')) &&
-              e.title.toLowerCase().includes(search.toLowerCase())
-            ) {
-              return (
-                <Recipe title={e.title} link={e.link} key={i}></Recipe>
-              )
-            }
-            else if (e.title.toLowerCase().includes(search.toLowerCase())
-            ) {
-              return (
-                <Recipe title={e.title} link={e.link} key={i}></Recipe>
-              )
+            if (!search) {
+              if (!deser && !mieso && !ryba && !sniadanie && !kolacja && !obiad && !wielkanoc && !swieta)
+                return (
+                  <Recipe title={e.title} link={e.link} key={i}></Recipe>
+                )
+              else if (deser && e.filters.includes('deser') ||
+                mieso && e.filters.includes('mieso') ||
+                ryba && e.filters.includes('ryba') ||
+                sniadanie && e.filters.includes('sniadanie') ||
+                kolacja && e.filters.includes('kolacja') ||
+                obiad && e.filters.includes('obiad') ||
+                wielkanoc && e.filters.includes('wielkanoc') ||
+                swieta && e.filters.includes('swieta')) {
+                return (
+                  <Recipe title={e.title} link={e.link} key={i}></Recipe>
+                )
+              }
+            } else if (e.title.toLowerCase().includes(search.toLowerCase())) {
+              if (!deser && !mieso && !ryba && !sniadanie && !kolacja && !obiad && !wielkanoc && !swieta)
+                return (
+                  <Recipe title={e.title} link={e.link} key={i}></Recipe>
+                )
+              else if (deser && e.filters.includes('deser') ||
+                mieso && e.filters.includes('mieso') ||
+                ryba && e.filters.includes('ryba') ||
+                sniadanie && e.filters.includes('sniadanie') ||
+                kolacja && e.filters.includes('kolacja') ||
+                obiad && e.filters.includes('obiad') ||
+                wielkanoc && e.filters.includes('wielkanoc') ||
+                swieta && e.filters.includes('swieta')) {
+                return (
+                  <Recipe title={e.title} link={e.link} key={i}></Recipe>
+                )
+              }
             }
           })}
         </ul>
