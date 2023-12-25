@@ -1,15 +1,32 @@
 .container {
   padding: 2rem;
-  border-bottom: 1px solid rgba(var(--callout-border-rgb), 0.3);
+  border: 1px solid rgba(var(--callout-border-rgb), 0.3);
+  border-radius: 20px;
   transition: all 250ms ease-in-out;
+  align-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 10px;
+}
+
+.title {
+  padding: 0.5rem;
+  text-wrap: nowrap;
 }
 
 .container:hover {
   transform: scale(1.05);
+  border: 1px solid rgba(var(--callout-border-rgb-highlight), 0.3);
 }
 
-/* @media screen and (max-width: 600px) {
+@media screen and (max-width: 600px) {
   .container {
     padding: 0.5rem;
   }
-} */
+}

@@ -1,14 +1,14 @@
 .container {
   width: 30%;
   height: 100%;
-  padding: 2rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 
 .button {
-  width: 80%;
+  width: fit-content;
   outline: none;
   border: 1px solid rgba(var(--callout-border-rgb), 0.3);
   border-radius: var(--border-radius);

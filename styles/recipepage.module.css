@@ -7,10 +7,15 @@
   gap: 2rem;
   display: flex;
   flex-direction: column;
+  align-content: center;
 }
 
-.container img {
-  width: 50%;
+.image {
+  width: 10%;
+}
+
+.title {
+  padding: 5rem;
 }
 
 @media screen and (max-width: 600px) {

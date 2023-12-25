@@ -1,12 +1,15 @@
 import Head from 'next/head'
 import styles from '@/styles/Home.module.css'
 import { Filter } from '@/components/filter'
+import { SearchBar } from '@/components/searchbar'
 import { Recipe } from '@/components/recipe'
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
 import { Dispatch, SetStateAction, createContext, useContext, useState } from 'react'
 import { RecipeList } from '@/data/data'
 
 export type globalContextType = {
+  search: string,
+  setSearch: Dispatch<SetStateAction<string>>,
   deser: boolean,
   setDeser: Dispatch<SetStateAction<boolean>>,
   mieso: boolean,
@@ -36,6 +39,7 @@ export default function Home() {
   const [obiad, setObiad] = useState(false)
   const [wielkanoc, setWielkanoc] = useState(false)
   const [swieta, setSwieta] = useState(false)
+  const [search, setSearch] = useState('')
 
   return (
     <globalContext.Provider value={{
@@ -46,7 +50,8 @@ export default function Home() {
       kolacja, setKolacja,
       obiad, setObiad,
       wielkanoc, setWielkanoc,
-      swieta, setSwieta
+      swieta, setSwieta,
+      search, setSearch
     }}>
       <Head>
         <title>Ksiązka Kucharska</title>
@@ -55,21 +60,45 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <Filter />
+        <div className={styles.leftBar}>
+          <SearchBar />
+          <Filter />
+        </div>
         <ul className={styles.recipesContainer}>
           {RecipeList.sort((a, b) => { return a.title.localeCompare(b.title) }).map((e, i) => {
-            if (!deser && !mieso && !ryba && !sniadanie && !kolacja && !obiad && !wielkanoc && !swieta)
+            if (!deser && !mieso && !ryba && !sniadanie && !kolacja && !obiad && !wielkanoc && !swieta && !search)
               return (
                 <Recipe title={e.title} link={e.link} key={i}></Recipe>
               )
-            else if (deser && e.filters.includes('deser') ||
+            else if ((deser && e.filters.includes('deser') ||
               mieso && e.filters.includes('mieso') ||
               ryba && e.filters.includes('ryba') ||
               sniadanie && e.filters.includes('sniadanie') ||
               kolacja && e.filters.includes('kolacja') ||
               obiad && e.filters.includes('obiad') ||
               wielkanoc && e.filters.includes('wielkanoc') ||
-              swieta && e.filters.includes('swieta')
+              swieta && e.filters.includes('swieta')) &&
+              !search
+            ) {
+              return (
+                <Recipe title={e.title} link={e.link} key={i}></Recipe>
+              )
+            }
+            else if ((deser && e.filters.includes('deser') ||
+              mieso && e.filters.includes('mieso') ||
+              ryba && e.filters.includes('ryba') ||
+              sniadanie && e.filters.includes('sniadanie') ||
+              kolacja && e.filters.includes('kolacja') ||
+              obiad && e.filters.includes('obiad') ||
+              wielkanoc && e.filters.includes('wielkanoc') ||
+              swieta && e.filters.includes('swieta')) &&
+              e.title.toLowerCase().includes(search.toLowerCase())
+            ) {
+              return (
+                <Recipe title={e.title} link={e.link} key={i}></Recipe>
+              )
+            }
+            else if (e.title.toLowerCase().includes(search.toLowerCase())
             ) {
               return (
                 <Recipe title={e.title} link={e.link} key={i}></Recipe>
