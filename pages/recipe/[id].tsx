@@ -5,6 +5,7 @@ import ReactMarkdown from 'react-markdown'
 import fs from 'fs'
 import path from 'path'
 import { RecipeList } from "@/data/data"
+import { Logo } from "@/components/logo"
 
 type RecipePageProps = {
   title: string,
@@ -14,8 +15,9 @@ type RecipePageProps = {
 const RecipePage: FC<RecipePageProps> = (props: RecipePageProps) => {
   return (
     <div className={styles.container}>
+      <Logo />
       <ReactMarkdown>{props.file}</ReactMarkdown>
-      <img src={`/images/${props.title}.jpg`} width={320} height={320}></img>
+      <img src={`/images/${props.title}.jpg`} className={styles.image}></img>
     </div>)
 }
 export default RecipePage
