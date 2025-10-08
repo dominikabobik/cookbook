@@ -74,4 +74,9 @@ export const RecipeList: RecipeData[] = [
     link: "chleb",
     filters: [""],
   },
+  {
+    title: "Ciasto ze śliwkami",
+    link: "ciasto-sliwka",
+    filters: ["deser"],
+  },
 ];
