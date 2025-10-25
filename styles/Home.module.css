@@ -36,6 +36,7 @@
 @media screen and (max-width: 600px) {
   .main {
     padding: 1rem;
+    flex-direction: column;
   }
   .recipesContainer {
     padding: 0.25rem;
@@ -54,6 +55,13 @@
     width: 100%;
     height: 100%;
     align-items: start;
+  }
+
+  .leftBar {
+    height: 10%;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
   }
 }
 
