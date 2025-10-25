@@ -21,7 +21,7 @@
 }
 
 .container:hover {
-  transform: scale(1.05);
+  transform: scale(1.02);
   border: 1px solid rgba(var(--callout-border-rgb-highlight), 0.3);
 }
 
