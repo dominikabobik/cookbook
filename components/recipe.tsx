@@ -9,7 +9,7 @@ type RecipeProps = {
 
 export const Recipe = ({ title, link }: RecipeProps): JSX.Element => {
   return (
-    <Link href={`/recipe/${link}`} className={styles.container} target="_blank">
+    <Link href={`/recipe/${link}`} className={styles.container}>
       <div className={styles.title} >{title}</div>
       <img src={`/images/${link}.jpg`} width="200px" className={styles.image}></img>
     </Link>)

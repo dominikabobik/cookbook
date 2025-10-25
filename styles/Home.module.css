@@ -37,6 +37,7 @@
   .main {
     padding: 1rem;
     flex-direction: column;
+    overflow-y: hidden;
   }
   .recipesContainer {
     padding: 0.25rem;
