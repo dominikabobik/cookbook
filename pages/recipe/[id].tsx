@@ -1,6 +1,6 @@
-import { GetStaticPropsContext, NextPage } from "next"
+import { GetStaticPropsContext } from "next"
 import { FC } from "react"
-import styles from '/styles/recipepage.module.css'
+import styles from './recipepage.module.css'
 import ReactMarkdown from 'react-markdown'
 import fs from 'fs'
 import path from 'path'
