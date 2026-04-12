@@ -79,4 +79,14 @@ export const RecipeList: RecipeData[] = [
     link: "ciasto-sliwka",
     filters: ["deser"],
   },
+  {
+    title: "Makaroniki",
+    link: "makaroniki",
+    filters: ["deser"],
+  },
+  {
+    title: "Kokosanki",
+    link: "kokosanki",
+    filters: ["deser"],
+  },
 ];
