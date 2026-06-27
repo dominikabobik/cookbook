@@ -89,4 +89,9 @@ export const RecipeList: RecipeData[] = [
     link: "kokosanki",
     filters: ["deser"],
   },
+  {
+    title: "Drożdżówki",
+    link: "drozdzowki",
+    filters: ["deser"],
+  },
 ];
